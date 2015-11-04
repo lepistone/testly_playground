@@ -19,5 +19,6 @@ install:
   - bin/buildout
 
 script:
+  - createdb o
   - bin/start_odoo --stop-after-init
   - echo "profit!!!"
