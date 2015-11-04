@@ -1,0 +1,23 @@
+sudo: false
+
+language: python
+
+python:
+  - "2.7"
+
+cache:
+  pip: true
+  directories:
+    - parts
+    - eggs
+
+virtualenv:
+  system_site_packages: true
+
+install:
+  - python bootstrap.py
+  - bin/buildout
+
+script:
+  - bin/start_odoo --stop-after-init
+  - echo "profit!!!"
